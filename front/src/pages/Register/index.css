@@ -1,0 +1,159 @@
+.modalRegister-content {
+    z-index: 5;
+    text-align: center;
+    background-color: #fefefe;
+    box-shadow: 2px 2px 20px rgb(48, 47, 47);
+    width: 30vw;
+    height: 30vw;
+    border: 0;
+    min-width: 13rem;
+    min-height: 20rem;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 130px;
+}
+
+.modalRegister{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register {
+    display: flex;
+    animation: heart-progress 500ms ease-in-out forwards;
+    width: 90vw;
+    top: 30vw;
+    border-radius: 5px;
+}
+
+
+@keyframes heart-progress {
+    0% {
+        transform: scaley(1);
+        opacity: .2;
+    }
+
+    25% {
+
+        opacity: .3;
+    }
+
+    50% {
+        opacity: .5;
+        transform: scale(1.1);
+    }
+
+    75% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    90% {
+        transform: scaley(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.btn-close {
+    position: absolute;
+    width: 10px;
+    font-weight: 900;
+    background: none;
+    z-index: 6;
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 1vw;
+}
+
+.btn-signin {
+    background-color: #888;
+}
+
+@media screen and (max-width: 768px) {
+    .register {
+        margin-top: 150px;
+    }
+
+    .modalRegister-content {
+        display: flex;
+        flex-direction: column;
+        height: 60vw;
+    }
+
+    .modalRegister-content h2 {
+        text-align: center;
+    }
+  
+    #signUpPrenom,
+    #signUpNom,
+    #signUpEmail,
+    #signUpPwd,
+    #repeatPwd{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .modalRegister-content .btn-login {
+        right: 20vw;
+        width: 20vw;
+    }
+
+    .modalRegister {
+        margin: 150px 0 0 0;
+    }
+
+    .btn-red {
+        min-width: 100px;
+        border-radius: 5px;
+    }
+
+}
+@media screen and (max-width: 420px){
+    .modalRegister-content{
+        z-index: 5;
+        text-align: center;
+        background-color: #fefefe;
+        box-shadow: 2px 2px 20px rgb(48, 47, 47);
+        width: 30vw;
+        height: 50vw;
+        border: 0;
+        min-width: 13rem;
+        min-height: 23rem;
+        padding: 10px;
+        border-radius: 5px;
+    }
+}
+
+.message-content{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fefefe;
+    justify-content: space-around;
+    width: 20vw;
+    height: 30vh;
+    border-radius: 5px;
+    min-height: 30vh;
+    
+}
+
+.message-success{
+    display: flex;
+    justify-content: center;
+    margin-top: 15vh;
+    animation: heart-progress 500ms ease-in-out forwards;
+}
+
+.title-message{
+    margin-top: 10vh;
+}
+
+
+

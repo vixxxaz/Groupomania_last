@@ -1,0 +1,172 @@
+.btnNav {
+    font-size: 1.5vw;
+    width: 14vw;
+    color:  #4E5166;
+    background-color:  #FFD7D7;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    font-weight: 700;
+}
+.icoNav{
+    font-size: 1.9vw;
+    width: 14vw;
+    background-color:  #FFD7D7;
+    color:  #4E5166;
+    cursor: pointer;
+    transition: all 250ms;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    margin-top: 2px;
+    font-weight: 700;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.container-imgNavBar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    font-size: 1.4vw;
+    font-weight: 900;
+    color: #4E5166;
+    width: 300px;
+}
+.img-profil{
+    width: 50px;
+    height: 50px;
+    margin-top: 12px;
+}
+
+
+.imgNavBar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transform: translate(-10px, 10px)
+}
+
+.navBar {
+    z-index: 9;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color:  #FFD7D7;
+    position: fixed;
+    border-radius: 5px;
+    top: 0;
+    width: 100%;
+}
+
+ul {
+    display: flex;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.logo{
+    margin-left: 0.250vw;
+}
+
+.imgLogo {
+    width: 30vw;
+    margin: 2vw 0 0 2vw;  
+}
+
+@media only screen and (max-width: 992px) {
+    .btnNav {
+        width: 20vw;
+        font-size: 1.2rem;
+    }
+    .icoNav{
+        width: 20vw;
+        font-size: 1.2rem;
+    }
+    .logo{
+        margin-left: 0.250vw;
+    }
+    .img-profil{
+        width: 50px;
+        height: 50px;
+    }
+
+    .container-imgNavBar {
+        font-size: 1rem;
+        font-weight: 900;
+    }
+
+    .imgNavBar {
+        width: 3vw;
+        height: 3vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .navBar {
+        flex-direction: column;
+        align-items: center;
+        height: 160px;
+    }
+
+    .img-profil{
+        width: 50px;
+        height: 50px;
+    }
+    .icoNav{
+        width: 30vw;
+        font-size: 1,2rem;
+    }
+    .btnNav {
+        width: 30vw;
+        font-size: 1rem;
+    }
+
+    .logo{
+        height: 50px;
+        width: 200px;
+        margin-left: 0.250vw;      
+    }
+    
+
+    .imgLogo {
+        width: 300px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .navBar nav {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    
+
+    .container-imgNavBar {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media only screen and (max-width: 420px){
+    .btnNav{
+        font-size: smaller;
+    }
+    .img-profil{
+        display: none;
+    }
+    .icoNav{
+        margin-top: 8px;
+    }
+}

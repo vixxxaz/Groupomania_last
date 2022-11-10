@@ -1,0 +1,26 @@
+{
+    "name": "api_groupomania",
+    "version": "1.0.0",
+    "description": "api du reseau social groupomania",
+    "main": "server.js",
+    "scripts": {
+        "start": "nodemon server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "vincent gardet",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.1.0",
+        "body-parser": "^1.20.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.1",
+        "fs": "^0.0.1-security",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.6.5",
+        "mongoose-unique-validator": "^3.1.0",
+        "multer": "^1.4.5-lts.1",
+        "nodemon": "^2.0.20",
+        "validator": "^13.7.0"
+    }
+}
