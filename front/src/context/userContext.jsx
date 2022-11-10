@@ -13,7 +13,7 @@ export function UserContextProvider(props) {
         deletePostModal: false,
     });
 
-    // condition qui change le state quand on appel les parametre ".."
+    // condition qui change le state quand on appel les parametres ".."
     const toggleModals = modal => {
 
         if (modal === "signIn") {

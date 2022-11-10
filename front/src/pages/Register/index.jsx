@@ -26,7 +26,7 @@ function Register() {
     //associer input a un tableau vide
     const inputs = useRef([])
 
-    
+    //addd Inputs ref des inputs dans le jsx
     const addInputs = el => {
         if (el && !inputs.current.includes(el)) {
             inputs.current.push(el)
@@ -70,7 +70,7 @@ function Register() {
             await axios.post( REGISTER_URL, { data })
 
                 .then(res => {
-                    
+                    //set les messages 
                     setValidation('Insription reussi !')
                     setSuccess(true);
                     console.log(res)
