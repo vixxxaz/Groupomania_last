@@ -74,7 +74,7 @@ exports.login = (req, res, next) => {
                         admin: user.admin,
                         token: jwt.sign(
                             { userId: user._id },
-                            'RANDOM_TOKEN_SECRET',
+                            `${process.env.KEY_TOKEN}`,
                             { expiresIn: '24h' }
                         )
                         
@@ -100,12 +100,3 @@ exports.oneUser = (req, res, next) => {
         .catch(error => res.status(501).json({ error }));
 } 
 
-// @desc      Get un one user
-// @route     GET /api/auth/user
-// @access    Public
-exports.getAllUsers = (req, res, next) => {
-    User.find()
-        .select("-password")
-        .then((allUsers) => res.status(200).json(allUsers))
-        .catch((error) => res.status(400).json({ error }));
-};

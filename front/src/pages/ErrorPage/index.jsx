@@ -39,8 +39,8 @@ const ErrorPage = () => {
         
         <Wrapper>
             <Title>L'adresse de la page est incorrect !</Title>
-            <Info>404 Page not found !</Info>             
-            <Button><Link to="/">Page d'accueil</Link></Button>                                        
+            <Info aria-label='page introuvable'>404 Page not found !</Info>             
+            <Button aria-label='retour a l accueil' ><Link to="/">Page d'accueil</Link></Button>                                        
         </Wrapper>
 
         )    

@@ -91,20 +91,20 @@ function Navbar() {
                 <>
                     <div className='container-imgNavBar'>
                         <p>Bienvenue {dataNavbar.name} </p>
-                        <img className='img-profil' src={dataNavbar.picture} alt="" />
+                        <img aria-label='image de profil' className='img-profil' src={dataNavbar.picture} alt="" />
                     </div>
                     <nav>
                         <ul >
-                            <li><button className="btnNav" onClick={() => toggleModals('newPost')}>Nouveau post</button></li>
-                            <li><button className="icoNav" onClick={logout}><ImExit /></button></li>
+                            <li><button aria-label='creer un post' className="btnNav" onClick={() => toggleModals('newPost')}>Nouveau post</button></li>
+                            <li><button aria-label='sortir' className="icoNav" onClick={logout}><ImExit /></button></li>
                         </ul>
                     </nav>
                 </>
                 ://sinon
                 <nav>
                     <ul>
-                        <li> <button className="btnNav" onClick={() => toggleModals('signUp')}>Inscription</button></li>
-                        <li> <button className="btnNav" onClick={() => toggleModals('signIn')}>Connexion</button></li>
+                        <li> <button id='inscription' className="btnNav" onClick={() => toggleModals('signUp')}>Inscription</button></li>
+                        <li> <button id='connexion' className="btnNav" onClick={() => toggleModals('signIn')}>Connexion</button></li>
                     </ul>
                 </nav>
             }

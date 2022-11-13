@@ -163,7 +163,8 @@ exports.deletePost = (req, res, next) => {
 //recupere tous les post
 exports.getAllPost = (req, res, next) => {
     //trouver les post
-    Post.find().then(
+    Post.find().sort({ createdDate: 'desc'})
+    .then(
         (posts) => {
             res.status(200).json(posts);
         }

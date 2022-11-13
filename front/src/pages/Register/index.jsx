@@ -2,11 +2,11 @@ import React, { useContext, useRef, useState } from 'react';
 import axios from '../../api/axios';
 import { UserContext } from '../../context/userContext'
 import './index.css'
-import {toast} from 'react-toastify'
+
 
 
 //regex de validation de mot de pass et du mail
-const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const EMAIL_REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 const PWD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
 //terminaison url
@@ -21,7 +21,7 @@ function Register() {
 
 
     //ajouter les variable de context pour les modals
-    const { toggleModals, modalState } = useContext(UserContext)
+    const { modalState } = useContext(UserContext)
   
     //associer input a un tableau vide
     const inputs = useRef([])
@@ -98,7 +98,7 @@ function Register() {
                     <div className='message-success'>
                         <div className='message-content'>
                             <h1 className='title-message'>{validation}</h1>
-                            <button onClick={() =>  window.location.reload()} className='btn-red'>Se connecter?</button>
+                            <button id='connecter' onClick={() =>  window.location.reload()} className='btn-red'>Se connecter?</button>
                             {/* en cas de succes de la creation de compte cette div apparait proposant d aller sur connecter */}
                         </div>
                     </div >
@@ -111,6 +111,7 @@ function Register() {
                                 <label htmlFor="signUpEmail"> Email : </label>
                                 <br />
                                 <input
+                                    aria-label='ajouter un mail'
                                     ref={addInputs}
                                     type="email"
                                     name="email"
@@ -122,6 +123,7 @@ function Register() {
                                 <br />
                                 
                                 <input
+                                    aria-label='ajouté un nom'
                                     ref={addInputs}
                                     type="nom"
                                     name="nom"
@@ -133,7 +135,8 @@ function Register() {
                                 <label htmlFor="signUpPwd"> Mot de passe : </label>
                                 <br />
                                 
-                                <input 
+                                <input
+                                    aria-label='ajouté un password' 
                                     ref={addInputs}
                                     type="password"
                                     name="pwd"
@@ -145,6 +148,7 @@ function Register() {
                                 <label htmlFor="repeatPwd">répétez le Mot de passe</label>
                                 <br />
                                 <input
+                                    aria-label='repeter le password'
                                     ref={addInputs}
                                     type="password"
                                     name="pwd"
@@ -153,7 +157,7 @@ function Register() {
                                 />
                                 <br />
                                 <p>{validation}</p>
-                                <button className='btn-red btn-position'>Soumettre</button>
+                                <button id='soumettre' className='btn-red btn-position'>Soumettre</button>
                             </form>
                         </div>
                     </div>

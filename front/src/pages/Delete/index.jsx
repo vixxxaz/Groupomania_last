@@ -46,11 +46,11 @@ function Delete() {
         <>
             {modalState.deletePostModal && (
                 <div className='modalDelete'>
-                    <div className='modalDelete-content'>
+                    <div aria-label='etes vous sûr' className='modalDelete-content'>
                         <p>Etes-vous sûre de vouloir supprimer votre publication?</p>
                         <div className='flex'>
-                            <div ><button className="buttonDelete" onClick={() => DeletePublication()}>oui</button></div>
-                            <div ><button className="buttonDelete" onClick={() => toggleModals("close")}>annuler</button></div>
+                            <div ><button id='effacer' className="buttonDelete" onClick={() => DeletePublication()}>oui</button></div>
+                            <div ><button id='annuler' className="buttonDelete" onClick={() => toggleModals("close")}>annuler</button></div>
                         </div>
                     </div>
                 </div>) }

@@ -4,7 +4,7 @@ import { UserContext } from '../../context/userContext'
 import './index.css'
 import authHeader from '../../services/auth-header'
 import {toast} from 'react-toastify'
-import {useNavigate} from 'react-router-dom'
+
 
 //endpoint api
 const REGISTER_URL = '/post';
@@ -111,7 +111,7 @@ export default function Publication() {
                         <div className='modalPost-content'>
                             <h1 className='title-message' >{validation}</h1 >
                             <br />
-                            <button className='btn-red' onClick={() => window.location.reload() } >ok</button>
+                            <button id='validation' className='btn-red' onClick={() => window.location.reload() } >ok</button>
                         </div>
                     </div>
                     
@@ -120,11 +120,12 @@ export default function Publication() {
                         <div className='modalPost'>
                             <div className='modalPost-content'>
                                 <h2>Publication</h2>
-                                <button className='btn-close-post' onClick={() => toggleModals("close")}>X</button>
+                                <button aria-label='fermer le post' className='btn-close-post' onClick={() => toggleModals("close")}>X</button>
                                 <form onSubmit={handleForm}>
                                     <label htmlFor="NewPostTitle"> titre :</label>
                                     <br />
                                     <input
+                                        aria-label='Entré un titre'
                                         ref={addInputs}
                                         type="text"
                                         name="title"
@@ -135,6 +136,7 @@ export default function Publication() {
                                     <label htmlFor="NewPostdescription"> Exprimez vous :</label>
                                     <br />
                                     <textarea
+                                        aria-label='Entré votre post'
                                         ref={addInputs}
                                         type="text"
                                         name="message"
@@ -142,9 +144,10 @@ export default function Publication() {
                                         id="postdescription"
                                     ></textarea>
                                     <br />
-                                    <label htmlFor="NewPostImage"> Image:</label>
+                                    <label htmlFor="NewPostImage" > Image:</label>
                                     <br />
                                     <input
+                                        aria-label='ajouté un image'
                                         ref={addInputs}
                                         type="file"
                                         name="image"
@@ -160,7 +163,7 @@ export default function Publication() {
                                             }
                                         </p>}
                                     <p >{validation}</p>
-                                    <button className='btnPostRed'>Publier</button>
+                                    <button id='publier' className='btnPostRed'>Publier</button>
                                 </form>
 
                             </div>

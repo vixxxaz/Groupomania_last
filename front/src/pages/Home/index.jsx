@@ -13,9 +13,9 @@ function Home() {
 
     const [data, setData] = useState([]);
     const user = localStorage.getItem('user');
-    const { toggleModals, modalState } = useContext(UserContext)
+    const { toggleModals } = useContext(UserContext)
     const testauthHeader = authHeader();
-    const [validationDel, setValidationDel] = useState('ok');
+    const [ setValidationDel ] = useState('ok');
     const localeStorageUser = JSON.parse(localStorage.getItem("user"));
 
     //fonction qui recupere tous les posts
@@ -33,7 +33,7 @@ function Home() {
                 }
             })
                 .then(res => {
-                    setData(res.data.reverse())
+                    setData(res.data)
                 })
         } catch (err) {
 
@@ -116,23 +116,23 @@ function Home() {
                             <div className='container-content-text'>
                                 {(x.userId === localeStorageUser.userId || localeStorageUser.admin) &&
                                     <>
-                                        <button className='btn-close-home' onClick={() => DeletePublication({ x })}><FaTrashAlt className='btn-close-trash' /></button>
-                                        <button className='btn-edit-home' onClick={() => { localStorageUpdate(x) }} ><FaRegEdit /></button>
+                                        <button id='supprimer' className='btn-close-home' onClick={() => DeletePublication({ x })}><FaTrashAlt className='btn-close-trash' /></button>
+                                        <button id='editer' className='btn-edit-home' onClick={() => { localStorageUpdate(x) }} ><FaRegEdit /></button>
                                     </>}
                                 <div className='container-dis-like'>
                                     <button className={(x.usersLiked.indexOf(localeStorageUser.userId) !== -1) ? 'red' : 'grey'} onClick={() => LikeDislike('like', x, x.usersLiked, x.usersDisliked)}>
-                                        <div className='align-btn-heart'><FaHeart />{x.likes}</div>                                                                          
+                                        <div aria-label='liker le post' className='align-btn-heart'><FaHeart />{x.likes}</div>                                                                          
                                     </button>                                                                  
                                 </div>
                                 <div className='truncate-overflow'>
                                     <p>{moment(x.createdDate).format("ddd Do MMM HH:mm ") }</p>
-                                    <h2>{x.title} </h2>
+                                    <h2>{x.title}</h2>
                                     <p className='truncate-overflow' >{x.message}</p>
                                 </div>
                             </div >
                             {typeof x.imageUrl !== 'undefined' &&
-                                <div className='container-content-image'>
-                                    <img alt={x.title} src={x.imageUrl} className='image-post' />
+                                <div className='container-content-image'aria-label='image du post' >
+                                    <img alt={x.title} src={x.imageUrl} className='image-post' Alt='' />
                                 </div>
                             }
                         </div >

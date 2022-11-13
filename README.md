@@ -7,14 +7,14 @@
 
 **Mongoose**,**React**, **Express** et **node** que j'ai decouvert lors de ce premier projet fullstack !
 
-#### Pour demarrer le projet, clÖner le faite un npm install
+#### Pour demarrer le projet, clÖner le et faite un npm install pour ajouter les module de node 
 
 
 ### Pour le backend Se placer dans le dossier back avec un terminal et taper npm start, il devrait ecouter le localhost:3000
 
-n'oublier de placer vos identifiant et mot de passe dans app.js mongoose !
+n'oublier de placer vos identifiant et mot de passe dans app.js dans le module mongoose !
 
-### Pour le front se placer dans le dossier front avec un terminale et taper npm start, il devrait écouter le localhost:4200
+### Pour le front se placer dans le dossier front/src avec un terminal et taper npm start, il devrait écouter le localhost:4200
 
 
 

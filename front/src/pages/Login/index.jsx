@@ -68,6 +68,7 @@ export default function Login() {
                                 <label htmlFor="signInEmail"> Email :</label>
                                 <br />
                                 <input
+                                    aria-label='ajouter un mail'
                                     ref={addInputs}
                                     type="email"
                                     name="email"
@@ -78,6 +79,7 @@ export default function Login() {
                                 <label htmlFor="signUpPwd"> Mot de passe :</label>
                                 <br />
                                 <input
+                                    aria-label='ajouter un mot de passe'
                                     ref={addInputs}
                                     type="password"
                                     name="pwd"
@@ -86,7 +88,7 @@ export default function Login() {
                                 />
                                 <br />
                                 <p className='validation-login'>{validation}</p>
-                                <button className='btn-login'>Connecter</button>
+                                <button id='connecter' className='btn-login'>Connecter</button>
                             </form>
                             <button onClick={() => toggleModals('signUp')}>S'inscrire ?</button>
                         </div>

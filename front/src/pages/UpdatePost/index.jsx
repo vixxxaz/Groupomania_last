@@ -137,7 +137,7 @@ function UpdatePost() {
                         <div className='modalPost-content'>
                             <h1 className='title-message' >{validation}</h1 >
                             <br />
-                            <button className='btn-red' onClick={() => window.location.reload()  } >ok</button>
+                            <button id='valider' className='btn-red' onClick={() => window.location.reload()  } >ok</button>
                         </div>
                     </div>
                 ) : (
@@ -150,6 +150,7 @@ function UpdatePost() {
                                     <label htmlFor="">Titre</label>
                                     <br />
                                     <input
+                                        aria-label='modifier le titre'
                                         ref={updateInputs}
                                         type="text"
                                         name="titleUpdate"
@@ -159,6 +160,7 @@ function UpdatePost() {
                                     <label >Publication</label>
                                     <br />
                                     <textarea
+                                        aria-label='modifier le texte'
                                         ref={updateInputs}
                                         type="text"
                                         name="descriptionUpdate"
@@ -174,9 +176,10 @@ function UpdatePost() {
                                         </p>) : (typeof localePost.imageUrl !== 'undefined' && (
                                             <><img alt={localePost.title} className="imgUpdate" src={localePost.imageUrl} /> </>))}
                                     <br />
-                                    <label htmlFor="">Image</label>
+                                    <label htmlFor="image">Image</label>
                                     <br />
                                     <input
+                                        aria-label='modifier image'
                                         ref={updateInputs}
                                         type="file"
                                         name="imageUpdate"
