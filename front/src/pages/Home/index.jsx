@@ -15,7 +15,7 @@ function Home() {
     const user = localStorage.getItem('user');
     const { toggleModals } = useContext(UserContext)
     const testauthHeader = authHeader();
-    const [ setValidationDel ] = useState('ok');
+    const [ validationDel, setValidationDel ] = useState('ok');
     const localeStorageUser = JSON.parse(localStorage.getItem("user"));
 
     //fonction qui recupere tous les posts
@@ -132,7 +132,7 @@ function Home() {
                             </div >
                             {typeof x.imageUrl !== 'undefined' &&
                                 <div className='container-content-image'aria-label='image du post' >
-                                    <img alt={x.title} src={x.imageUrl} className='image-post' Alt='' />
+                                    <img alt={x.title} src={x.imageUrl} className='image-post'  />
                                 </div>
                             }
                         </div >
