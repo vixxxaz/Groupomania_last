@@ -15,15 +15,15 @@ exports.createPost = (req, res, next) => {
     User.findOne({ _id: req.auth.userId })
 
         .then(user => {
-            //si il n'y a pas d image
+            //si il n'y a pas d image, creer le post sans avec les données de la requete
             if (typeof req.file == 'undefined') {
                 var post = new Post({
                     ...req.body,
                     userId: req.auth.userId,
-                    createdDate: Date.now(),
+                    createdDate: Date.now(),//ajoute la date d'haujourd'hui
                 });
             } else {
-                //si il y a une image
+                //si il y a une image creer avec l adresse de l image
                 var post = new Post({
                     ...req.body,
                     userId: req.auth.userId,
@@ -47,7 +47,7 @@ exports.getOnePost = (req, res, next) => {
         _id: req.params.id
     }).then(
         (post) => {
-            res.status(200).json(post);
+            res.status(200).json(post);//ajoute le poste a la reponse
         }
     ).catch(
         (error) => {

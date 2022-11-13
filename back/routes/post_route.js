@@ -11,15 +11,15 @@ const auth = require('../middleware/auth');
 const multer = require('../middleware/multer-config');
 
 //connect les controller
-const stuffCtrl = require('../controllers/post');
+const postCtrl = require('../controllers/post');
 
 
 //ajout des routes avec endpoint
-router.get('/', auth, stuffCtrl.getAllPost);
-router.post('/', auth, multer, stuffCtrl.createPost);
-router.get('/:id', auth, stuffCtrl.getOnePost);
-router.put('/:id', auth, multer, stuffCtrl.modifyPost);
-router.delete('/:id', auth, stuffCtrl.deletePost);
-router.post('/:id/like', auth, stuffCtrl.likePost);
+router.get('/', auth, postCtrl.getAllPost);
+router.post('/', auth, multer, postCtrl.createPost);
+router.get('/:id', auth, postCtrl.getOnePost);
+router.put('/:id', auth, multer, postCtrl.modifyPost);
+router.delete('/:id', auth, postCtrl.deletePost);
+router.post('/:id/like', auth, postCtrl.likePost);
 
 module.exports = router;

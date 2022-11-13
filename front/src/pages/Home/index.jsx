@@ -18,7 +18,7 @@ function Home() {
     const [validationDel, setValidationDel] = useState('ok');
     const localeStorageUser = JSON.parse(localStorage.getItem("user"));
 
-
+    //fonction qui recupere tous les posts
     const getAllPost = () => {
         try {
 
@@ -34,7 +34,6 @@ function Home() {
             })
                 .then(res => {
                     setData(res.data.reverse())
-
                 })
         } catch (err) {
 
@@ -110,7 +109,7 @@ function Home() {
     return (
         <>
             
-            <div className="modal ">
+            <div className="modal">
                 {data.map((x) => (
                     <article key={x._id} className='modal-content'>
                         <div className='container'>

@@ -133,8 +133,8 @@ function UpdatePost() {
         <>
             {
                success  ? ( 
-                    <div className='message-success'>
-                        <div className='message-content'>
+                    <div className='modalPost'>
+                        <div className='modalPost-content'>
                             <h1 className='title-message' >{validation}</h1 >
                             <br />
                             <button className='btn-red' onClick={() => window.location.reload()  } >ok</button>
