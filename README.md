@@ -14,11 +14,11 @@
 
 il faut créer un compte sur mongoDB, creer un cluster,et de placer vos identifiant et mot de passe dans app.js dans le module mongoose !
 
-et ajouter un fichier .env avec vos données :
-BD_USERNAME : identifiant mongoose 
-BD_PASS: mot de pass mongoose
-PORT: port de l api
-KEY_TOKEN: phrase secrete 
+* et ajouter un fichier .env avec vos données :
+    * BD_USERNAME : identifiant mongoose 
+    * BD_PASS: mot de pass mongoose
+    * PORT: port de l api
+    * KEY_TOKEN: phrase secrete 
 
 ### Pour le backend Se placer dans le dossier back avec un terminal et taper npm start, il devrait ecouter le localhost:3000
 
