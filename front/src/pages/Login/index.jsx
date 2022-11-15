@@ -2,15 +2,13 @@ import React, { useContext, useRef, useState } from 'react';
 import axios from '../../api/axios';
 import { UserContext } from '../../context/userContext'
 import './index.css'
-import authHeader from '../../services/auth-header'
-import 'react-toastify/dist/ReactToastify.min.css';
 
 //endpoint api
 const REGISTER_URL = '/auth/login';
 
 export default function Login() {
 
-    const testauthHeader = authHeader();
+    // const testauthHeader = authHeader();
     const { toggleModals, modalState } = useContext(UserContext)
     const [validation, setValidation] = useState('');
     const inputs = useRef([])
@@ -43,7 +41,7 @@ export default function Login() {
                     window.location.reload()
                 })
           
-            console.log(testauthHeader.authorization);           
+                      
 
         } catch (err) {
             if (!err?.response) {

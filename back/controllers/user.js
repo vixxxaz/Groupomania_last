@@ -4,8 +4,7 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 //importer le gestionnaire de token
 const jwt = require('jsonwebtoken');
-//gestion des fichier
-const fs = require('fs');
+
 
 //creation nouvelle utilisateur
 exports.signup = (req, res, next) => {

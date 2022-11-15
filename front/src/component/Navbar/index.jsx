@@ -36,7 +36,7 @@ function Navbar() {
         window.location.reload();
 
     };
-    //si on recupere un objet vide user dans le ls athenticate false sinon true 
+    //si on recupere un user dans le ls, athenticate true sinon false 
     if ((typeof localStorage.getItem('user')) == 'object') {       
         authenticateUser = false
     } else {

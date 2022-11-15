@@ -41,6 +41,8 @@ const apiLimiter = rateLimit({
     legacyHeaders: false,
 });
 
+app.use(rateLimit);
+
 //cors error
 const corsOptions = {
     origin: ['http://localhost:3000', 'http://localhost:4200'],

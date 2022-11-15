@@ -15,6 +15,7 @@ function Home() {
     const user = localStorage.getItem('user');
     const { toggleModals } = useContext(UserContext)
     const testauthHeader = authHeader();
+    // eslint-disable-next-line 
     const [ validationDel, setValidationDel ] = useState('ok');
     const localeStorageUser = JSON.parse(localStorage.getItem("user"));
 
@@ -23,9 +24,9 @@ function Home() {
         try {
 
             if (!localeStorageUser) {
-
                 toggleModals('signIn')
             }
+            
             axios.get(REGISTER_URL, {
                 headers: {
                     'Content-Type': 'application/json',
@@ -33,7 +34,7 @@ function Home() {
                 }
             })
                 .then(res => {
-                    setData(res.data)
+                    setData(res.data.reverse())
                 })
         } catch (err) {
 
@@ -94,13 +95,13 @@ function Home() {
 
     }
 
-    //met a jour le localstorage
+    //met a jour le localstorage quand on upadte un post
     function localStorageUpdate(idPost) {
         localStorage.setItem("updatePost", JSON.stringify(idPost));
         toggleModals('updatePost')
     }
 
-    //met a jour le localstorage
+    //met a jour le localstorage quand supprime publication
     function DeletePublication(idPost) {
         localStorage.setItem("updatePost", JSON.stringify(idPost));
         toggleModals('delete')
@@ -125,7 +126,7 @@ function Home() {
                                     </button>                                                                  
                                 </div>
                                 <div className='truncate-overflow'>
-                                    <p>{moment(x.createdDate).format("ddd Do MMM HH:mm ") }</p>
+                                    <p>Modifié le : {moment(x.createdDate).format("ddd Do MMM HH:mm ") }</p>
                                     <h2>{x.title}</h2>
                                     <p className='truncate-overflow' >{x.message}</p>
                                 </div>

@@ -3,26 +3,22 @@ import axios from '../../api/axios';
 import { UserContext } from '../../context/userContext'
 import './index.css'
 import authHeader from '../../services/auth-header'
-import {toast} from 'react-toastify'
 
 
 //endpoint api
 const REGISTER_URL = '/post';
 
-
-
 //fonction inscription
 export default function Publication() {
 
-    const [fileDataURL, setFileDataURL] = useState(null);
-    const [success, setSuccess] = useState(false);
+    const [ fileDataURL, setFileDataURL ] = useState(null);
+    const [ success, setSuccess ] = useState(false);
     const { toggleModals, modalState } = useContext(UserContext)
-    const [validation, setValidation] = useState('');
-    const [file, setFile] = useState(null);
+    const [ validation, setValidation ] = useState('');
+    const [ file, setFile ] = useState(null);
     const inputs = useRef([])
 
     const testauthHeader = authHeader();
-
 
     // add input in array
     const addInputs = el => {
@@ -41,9 +37,9 @@ export default function Publication() {
             const title = inputs.current[0].value;
             const text = inputs.current[1].value;
             const image = file;
-            const postThing = ({ title: title, message: text, image: image });
+            const postData = ({ title: title, message: text, image: image });
 
-            await axios.post(REGISTER_URL, postThing, {
+            await axios.post(REGISTER_URL, postData, {
                 headers: {
                     "Content-type": "multipart/form-data",
                     "authorization": `${testauthHeader.authorization}`,
@@ -51,9 +47,7 @@ export default function Publication() {
                 })
 
                 .then(res => {
-                    if (res.status === 200)
-                    toast.success("Success!")
-                    setValidation('post reussi')
+                    setValidation('post reussi !')
                     setSuccess(true);     
                 })
 
@@ -121,7 +115,10 @@ export default function Publication() {
                             <div className='modalPost-content'>
                                 <h2>Publication</h2>
                                 <button aria-label='fermer le post' className='btn-close-post' onClick={() => toggleModals("close")}>X</button>
-                                <form onSubmit={handleForm}>
+                                <form
+                                  onSubmit={handleForm}
+                                  encType="multipart/form-data"
+                                  >
                                     <label htmlFor="NewPostTitle"> titre :</label>
                                     <br />
                                     <input

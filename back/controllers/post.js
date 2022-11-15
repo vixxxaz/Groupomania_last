@@ -135,7 +135,6 @@ exports.deletePost = (req, res, next) => {
                     if (post.userId == req.auth.userId || user.admin == true) {
                         //si il n y a l'image
                         if ((typeof post.imageUrl) !== 'undefined') {
-                            console.log(typeof post.imageUrl);
                             const filename = post.imageUrl.split('/images/')[1];
                             //efface l image du backend
                             fs.unlink(`images/${filename}`, () => {
@@ -163,7 +162,7 @@ exports.deletePost = (req, res, next) => {
 //recupere tous les post
 exports.getAllPost = (req, res, next) => {
     //trouver les post
-    Post.find().sort({ createdDate: 'desc'})
+    Post.find()
     .then(
         (posts) => {
             res.status(200).json(posts);
