@@ -41,7 +41,7 @@ const apiLimiter = rateLimit({
     legacyHeaders: false,
 });
 
-app.use(rateLimit);
+app.use(apiLimiter);
 
 //cors error
 const corsOptions = {
