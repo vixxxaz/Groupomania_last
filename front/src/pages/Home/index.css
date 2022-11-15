@@ -277,4 +277,7 @@ html {
     h2 {
         font-size: 1rem;
     }
+    .date-post{
+        font-size: small;
+    }
 }

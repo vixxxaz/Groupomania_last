@@ -15,27 +15,26 @@
 
 .modalRegister{
     display: flex;
+    animation: modal-progress 1000ms ease-in-out forwards;
     flex-direction: column;
     align-items: center;
 }
 
 .register {
-    display: flex;
-    animation: heart-progress 500ms ease-in-out forwards;
+    display: flex;    
     width: 90vw;
     top: 30vw;
     border-radius: 5px;
 }
 
 
-@keyframes heart-progress {
+@keyframes modal-progress {
     0% {
         transform: scaley(1);
         opacity: .2;
     }
 
     25% {
-
         opacity: .3;
     }
 
@@ -83,7 +82,7 @@
     .modalRegister-content {
         display: flex;
         flex-direction: column;
-        height: 60vw;
+        height: 86vw;
     }
 
     .modalRegister-content h2 {
@@ -122,7 +121,7 @@
         background-color: #fefefe;
         box-shadow: 2px 2px 20px rgb(48, 47, 47);
         width: 30vw;
-        height: 50vw;
+        height: 110vw;
         border: 0;
         min-width: 13rem;
         min-height: 23rem;
@@ -131,25 +130,7 @@
     }
 }
 
-.message-content{    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fefefe;
-    justify-content: space-around;
-    width: 20vw;
-    height: 30vh;
-    border-radius: 5px;
-    min-height: 30vh;
-    
-}
 
-.message-success{
-    display: flex;
-    justify-content: center;
-    margin-top: 15vh;
-    animation: heart-progress 500ms ease-in-out forwards;
-}
 
 .title-message{
     margin-top: 10vh;

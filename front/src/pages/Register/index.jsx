@@ -26,7 +26,7 @@ function Register() {
     //associer input a un tableau vide
     const inputs = useRef([])
 
-    //ajoute Inputs ref des inputs dans le jsx
+    //ajoute Inputs ref des inputs dans le jsx pour envoyer les element saisi dans le tableau 
     const addInputs = el => {
         if (el && !inputs.current.includes(el)) {
             inputs.current.push(el)
@@ -40,6 +40,12 @@ function Register() {
         //regex pour controller les données rentré par l utilisateur
         const v1 = EMAIL_REGEX.test(inputs.current[0].value);
         const v2 = PWD_REGEX.test(inputs.current[3].value);
+
+        //message si l'adresse mail est incorrect
+        if(!v1){
+            setValidation('Entrer une adresse mail correct !')
+            return;
+        }
 
         //compare le nombre de lettre du password
         if ((inputs.current[3].value.length || inputs.current[2].value.length) < 8) {

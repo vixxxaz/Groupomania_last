@@ -126,7 +126,7 @@ function Home() {
                                     </button>                                                                  
                                 </div>
                                 <div className='truncate-overflow'>
-                                    <p>Modifié le : {moment(x.createdDate).format("ddd Do MMM HH:mm ") }</p>
+                                    <p className='date-post'>Modifié le : {moment(x.createdDate).format("ddd Do MMM HH:mm ") }</p>
                                     <h2>{x.title}</h2>
                                     <p className='truncate-overflow' >{x.message}</p>
                                 </div>

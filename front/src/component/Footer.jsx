@@ -44,12 +44,12 @@ const Date = styled.p`
 function Footer() {
 
   return (
-    <div>
+    <>
       <Foot>
         <Date>{moment().format("dddd Do MMM YYYY, HH:mm ")}</Date>
         <Logo />
       </Foot>
-    </div>
+    </>
   );
 }
 

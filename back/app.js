@@ -78,6 +78,7 @@ app.use(helmet.hidePoweredBy());
 // configuration "Cross-Origin-Resource-Policy: same-site"
 app.use(helmet.crossOriginResourcePolicy({ policy: "same-site" }));
 
+
 //configuration "express-mongo-sanitze" allowDots et replaceWith en globale
 app.use(
   mongoSanitize({

@@ -36,6 +36,9 @@ exports.createPost = (req, res, next) => {
                 .then(() => { res.status(201).json({ message: 'Objet enregistré !' }) })
                 .catch(error => { res.status(400).json({ error }) })
         })
+    .catch(error => {
+        res.status(500).json({ error });
+    });    
 };
 
 
@@ -119,6 +122,9 @@ exports.modifyPost = (req, res, next) => {
                 }
             }
         })
+    .catch(error => {
+        res.status(500).json({ error });
+    });    
 }
 
 
@@ -156,6 +162,9 @@ exports.deletePost = (req, res, next) => {
                     res.status(500).json({ error });
                 });
         })
+    .catch(error => {
+        res.status(500).json({ error });
+    });    
 };
 
 
@@ -167,7 +176,8 @@ exports.getAllPost = (req, res, next) => {
         (posts) => {
             res.status(200).json(posts);
         }
-    ).catch(
+    )
+    .catch(
         (error) => {
             res.status(400).json({
                 error: error
