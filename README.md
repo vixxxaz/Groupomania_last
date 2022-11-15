@@ -4,7 +4,7 @@
 ## projet 7 parcours de developpeur web openClassRoom.
 ------------------------------------------------------------------------------------------------------------------------------------------
 
-![This is an image](icon-left-font.png)
+![This is an image](icon-left-font_300x300.png)
 
 ### Projet que j'ai choisi de developper avec le full stack M.E.R.N!
 
