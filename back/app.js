@@ -36,12 +36,12 @@ const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const apiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 10, // 10 requêtes par IP durant 15 minutes
+    max: 20, // 20 requêtes par IP durant 15 minutes
     standardHeaders: true,
     legacyHeaders: false,
 });
 
-app.use(apiLimiter);
+
 
 //cors error
 const corsOptions = {
@@ -68,6 +68,9 @@ app.use(bodyParser.json());
 
 //cross origine
 app.use(cors(corsOptions));
+
+//limit les tentative de connexion abusive pour un piratage 
+app.use(apiLimiter);
 
 // on désactive le header "X-Powered-By" qui pourrait constituer une fuite d'informations
 app.use(helmet.hidePoweredBy());

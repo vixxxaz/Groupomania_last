@@ -60,7 +60,7 @@ function Home() {
         let number;
 
         if ((userLiked.indexOf(idUser) !== -1 && likeDislike === 'dislike') || (userDisliked.indexOf(idUser) !== -1 && likeDislike === 'like')) {
-
+           
         } else {
 
             if (userLiked.indexOf(idUser) === -1 && userDisliked.indexOf(idUser) === -1) {
